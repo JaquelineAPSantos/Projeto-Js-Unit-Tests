@@ -28,13 +28,24 @@ const productDetails = require('../src/productDetails');
 
 describe('6 - Implemente os casos de teste para a função `productDetails`', () => {
   it('Verifica se a função `productDetails` tem o comportamento esperado', () => {
-    fail('Teste vazio!');
-    // ESCREVA SEUS TESTES ABAIXO:
-    // Teste se productDetails é uma função.
-    // Teste se o retorno da função é um array.
-    // Teste se o array retornado pela função contém dois itens dentro.
-    // Teste se os dois itens dentro do array retornado pela função são objetos.
-    // Teste se quando passado parâmetros diferentes entre si, os dois objetos também são diferentes entre si.
-    // Teste se os dois productIds terminam com 123.
-  });
+  }); 
+  it('Verifica se productDetails é uma função', () => {
+    expect(typeof productDetails). toMatch('function')
+  }) // Teste se productDetails é uma função.
+  it('Verifica se o retorno da função é um array', () => {
+    expect(typeof productDetails()). toContain([])
+  }) // Teste se o retorno da função é um array.
+  it('Verifica se o array retornado pela função contém dois itens dentro', () => {
+    expect(productDetails()). toHaveLength(2)
+  }) // Teste se o array retornado pela função contém dois itens dentro.
+  it('Verifica se os dois itens dentro do array retornado pela função são objetos', () => {
+    expect(productDetails()). toMatchObject({})
+  })  // Teste se os dois itens dentro do array retornado pela função são objetos.
+  it('Verifica se quando passado parâmetros diferentes entre si, os dois objetos também são diferentes entre si', () => {
+    expect(productDetails('Alcool gel', 'Máscara')).not.toEqual()
+  }) // Teste se quando passado parâmetros diferentes entre si, os dois objetos também são diferentes entre si.
+  it('Verifica se os dois productIds terminam com 123', () => {
+    expect(productDetails('Alcool gel', 'Máscara')[0].details.productId.includes('123')). toBe(true)
+    expect(productDetails('Alcool gel', 'Máscara')[1].details.productId.includes('123')). toBe(true)
+})
 });
