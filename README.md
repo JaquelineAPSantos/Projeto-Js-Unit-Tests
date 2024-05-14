@@ -1,4 +1,4 @@
-### Repositório do projeto de ES6 e Testes Unitários!
+# Repositório do projeto de ES6 e Testes Unitários!
 
 
 ## Requisitos do Projeto
